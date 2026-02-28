@@ -7,7 +7,6 @@ using UnityEngine;
 
 namespace HKTelemetryMod
 {
-    // This tells BepInEx to load our mod
     [BepInPlugin("com.dayya.hollowknight.telemetry", "HK Telemetry Mod", "1.0.0")]
     public class HKTelemetryPlugin : BaseUnityPlugin
     {
@@ -15,7 +14,6 @@ namespace HKTelemetryMod
         private IPEndPoint endPoint;
         private HealthManager currentBoss;
 
-        // Start() runs once when the game boots
         private void Start()
         {
             Logger.LogInfo("HKTelemetry Mod Initializing...");
@@ -24,7 +22,6 @@ namespace HKTelemetryMod
             endPoint = new IPEndPoint(IPAddress.Parse("127.0.0.1"), 5005);
         }
 
-        // Update() is a native Unity method that runs every single frame
         private void Update()
         {
             try
@@ -51,10 +48,7 @@ namespace HKTelemetryMod
                 udpClient.Send(bytes, bytes.Length, endPoint);
             }
             catch (Exception)
-            {
-                // We silently catch exceptions here so we don't spam the log 60 times a second
-                // if we are on the main menu where PlayerData doesn't exist yet.
-            }
+            {}
         }
     }
 }
