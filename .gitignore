@@ -1,0 +1,32 @@
+# Byte-compiled / optimized / DLL files
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Virtual Environments
+venv/
+env/
+.env
+.venv
+env.bak/
+venv.bak/
+
+# Project-specific ignores
+checkpoints/
+training_metrics.csv
+training_log.txt
+*.pth
+*.pt
+
+# IDE / Editor folders
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# Modding / Builds
+bin/
+obj/
+*.dll
+*.pdb
+.vs/
